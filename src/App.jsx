@@ -8,6 +8,7 @@ function App() {
         <div>
           <Link to="/">Home</Link>
           <Link to="shop">Shop</Link>
+          <Link to="shop/shopping-cart">Shopping cart</Link>
         </div>
       </nav>
       <Outlet />

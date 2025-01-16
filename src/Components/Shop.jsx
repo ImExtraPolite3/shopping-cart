@@ -5,6 +5,11 @@ import { useEffect, useState } from 'react';
 function Shop() {
   let { name } = useParams();
   const [getItems, setGetItem] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const handleCart = (e) => {
+    setCart((prevItem) => [...prevItem, e.target.textContent]);
+  };
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -16,11 +21,15 @@ function Shop() {
   return (
     <div className="shop">
       {name === 'shopping-cart' ? (
-        <ShoppingCart />
+        <ShoppingCart cart={cart} />
       ) : (
         <>
           {getItems.map((item) => {
-            return <div key={item.id}>{item.title}</div>;
+            return (
+              <div key={item.id} onClick={handleCart}>
+                {item.title}
+              </div>
+            );
           })}
         </>
       )}
