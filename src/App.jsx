@@ -7,7 +7,7 @@ function App() {
         <h1>StoreName</h1>
         <div>
           <Link to="/">Home</Link>
-          <Link to="shop/shopping-cart">Shop</Link>
+          <Link to="shop">Shop</Link>
         </div>
       </nav>
       <Outlet />
