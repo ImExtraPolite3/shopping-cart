@@ -1,7 +1,16 @@
+import { Outlet, Link } from 'react-router';
+
 function App() {
   return (
     <>
-      <h1>HEllo</h1>
+      <nav>
+        <h1>StoreName</h1>
+        <div>
+          <Link to="/">Home</Link>
+          <Link to="shop/shopping-cart">Shop</Link>
+        </div>
+      </nav>
+      <Outlet />
     </>
   );
 }
