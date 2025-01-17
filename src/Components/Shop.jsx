@@ -12,7 +12,7 @@ function Shop() {
   };
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.in/api/products')
       .then((response) => response.json())
       .then((json) => setGetItem(json))
       .catch((error) => console.log(error));
@@ -24,11 +24,13 @@ function Shop() {
         <ShoppingCart cart={cart} />
       ) : (
         <>
-          {getItems.map((item) => {
+          {getItems.products.map((item) => {
             return (
-              <div key={item.id} onClick={() => handleCart(item)}>
+              <div key={item.id}>
+                <img src={item.image} alt={item.title} />
                 <h1>{item.title}</h1>
-                <p>{item.price}</p>
+                <p>${item.price}</p>
+                <button onClick={() => handleCart(item)}>add to cart</button>
               </div>
             );
           })}
