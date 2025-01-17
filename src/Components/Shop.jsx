@@ -8,7 +8,7 @@ function Shop() {
   const [cart, setCart] = useState([]);
 
   const handleCart = (e) => {
-    setCart((prevItem) => [...prevItem, e.target.textContent]);
+    setCart((prevItem) => [...prevItem, e]);
   };
 
   useEffect(() => {
@@ -26,8 +26,9 @@ function Shop() {
         <>
           {getItems.map((item) => {
             return (
-              <div key={item.id} onClick={handleCart}>
-                {item.title}
+              <div key={item.id} onClick={() => handleCart(item)}>
+                <h1>{item.title}</h1>
+                <p>{item.price}</p>
               </div>
             );
           })}
