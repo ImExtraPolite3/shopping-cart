@@ -5,8 +5,10 @@ function Shop({ allItems, showProduct }) {
     <div className="shop">
       {allItems.map((item, index) => {
         return (
-          <Link to="/product" key={index}>
-            <div onClick={() => showProduct(item)}>{item.title}</div>
+          <Link to="/product" key={index} onClick={() => showProduct(item)}>
+            <img src={item.image} alt={item.title} />
+            <h1>{item.title}</h1>
+            <p>$ {item.price}</p>
           </Link>
         );
       })}
