@@ -17,6 +17,10 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleCart = () => {
+    setCart((prevItem) => [...prevItem, getProduct]);
+  };
+
   return (
     <>
       <nav>
@@ -28,15 +32,11 @@ function App() {
       </nav>
       <div>
         {name === 'product' ? (
-          <Product showProduct={getProduct} />
+          <Product showProduct={getProduct} addToCart={handleCart} />
         ) : name === 'shopping-cart' ? (
           <ShoppingCart cart={getCart} />
         ) : (
-          <Shop
-            allItems={getItems}
-            showProduct={setGetProduct}
-            addToCart={setCart}
-          />
+          <Shop allItems={getItems} showProduct={setGetProduct} />
         )}
       </div>
     </>
