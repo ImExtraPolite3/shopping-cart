@@ -24,9 +24,10 @@ function App() {
   return (
     <>
       <nav>
-        <h1>StoreName</h1>
+        <Link to="/">
+          <h1>StoreName</h1>
+        </Link>
         <div>
-          <Link to="/">Home</Link>
           <Link to="/shopping-cart">Shopping cart</Link>
         </div>
       </nav>

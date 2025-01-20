@@ -7,5 +7,26 @@ nav {
   display: flex;
   justify-content: space-between;
   position: sticky;
+  padding: 10px;
+  background-color: white;
   top: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.shop {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  width: 85%;
+  margin: auto;
+}
+
+.shop > a > img {
+  width: 150px;
 }
