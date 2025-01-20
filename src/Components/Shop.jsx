@@ -1,11 +1,13 @@
+import { Link } from 'react-router';
+
 function Shop({ allItems, showProduct }) {
   return (
     <div className="shop">
       {allItems.map((item, index) => {
         return (
-          <div key={index} onClick={() => showProduct(item)}>
-            {item.title}
-          </div>
+          <Link to="/product" key={index}>
+            <div onClick={() => showProduct(item)}>{item.title}</div>
+          </Link>
         );
       })}
     </div>

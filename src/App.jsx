@@ -22,7 +22,6 @@ function App() {
         <h1>StoreName</h1>
         <div>
           <Link to="/">Home</Link>
-          <Link to="/product">Product</Link>
           <Link to="/shopping-cart">Shopping cart</Link>
         </div>
       </nav>
