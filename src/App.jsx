@@ -8,6 +8,7 @@ function App() {
   let { name } = useParams();
   const [getItems, setGetItem] = useState([]);
   const [getProduct, setGetProduct] = useState('');
+  const [getCart, setCart] = useState([]);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -29,9 +30,13 @@ function App() {
         {name === 'product' ? (
           <Product showProduct={getProduct} />
         ) : name === 'shopping-cart' ? (
-          <ShoppingCart cart={'shopping cart'} />
+          <ShoppingCart cart={getCart} />
         ) : (
-          <Shop allItems={getItems} showProduct={setGetProduct} />
+          <Shop
+            allItems={getItems}
+            showProduct={setGetProduct}
+            addToCart={setCart}
+          />
         )}
       </div>
     </>
