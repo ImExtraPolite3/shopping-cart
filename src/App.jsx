@@ -5,8 +5,9 @@ import ShoppingCart from './Components/ShoppingCart';
 import Shop from './Components/Shop';
 
 function App() {
-  const [getItems, setGetItem] = useState([]);
   let { name } = useParams();
+  const [getItems, setGetItem] = useState([]);
+  const [getProduct, setGetProduct] = useState('');
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -27,11 +28,11 @@ function App() {
       </nav>
       <div>
         {name === 'product' ? (
-          <Product />
+          <Product showProduct={getProduct} />
         ) : name === 'shopping-cart' ? (
           <ShoppingCart cart={'shopping cart'} />
         ) : (
-          <Shop />
+          <Shop allItems={getItems} showProduct={setGetProduct} />
         )}
       </div>
     </>
