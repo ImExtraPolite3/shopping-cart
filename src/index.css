@@ -10,9 +10,24 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  padding: 10px;
-  background-color: white;
+  padding: 10px 0;
+  background-color: navy;
+  color: white;
   top: 0;
+}
+
+nav > button {
+  background: none;
+  border: none;
+  color: white;
+}
+
+nav > a {
+  color: white;
+}
+
+nav > a:nth-child(2) {
+  flex-grow: 2;
 }
 
 a {
@@ -20,8 +35,23 @@ a {
   text-decoration: none;
 }
 
-#root > div {
+#root > div:last-child {
   margin: 20px 0;
+}
+
+.menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+  width: 40%;
+}
+
+.menu > button {
+  padding: auto;
+  border: none;
+  background-color: navy;
 }
 
 .shop {
