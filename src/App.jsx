@@ -27,9 +27,7 @@ function App() {
         <Link to="/">
           <h1>StoreName</h1>
         </Link>
-        <div>
-          <Link to="/shopping-cart">Shopping cart</Link>
-        </div>
+        <Link to="/shopping-cart">Shopping cart</Link>
       </nav>
       <div>
         {name === 'product' ? (
