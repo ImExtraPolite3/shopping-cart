@@ -43,7 +43,11 @@ function App() {
         {name === 'product' ? (
           <Product showProduct={getProduct} addToCart={handleCart} />
         ) : name === 'shopping-cart' ? (
-          <ShoppingCart cart={getCart} />
+          getCart.length > 0 ? (
+            <ShoppingCart cart={getCart} />
+          ) : (
+            <div className="empty-cart">Cart is empty! Add items to cart !</div>
+          )
         ) : (
           <Shop allItems={getItems} showProduct={setGetProduct} />
         )}

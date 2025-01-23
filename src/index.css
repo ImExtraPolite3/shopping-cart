@@ -114,3 +114,7 @@ a {
 .shopping-cart > div > img {
   width: 20%;
 }
+
+.empty-cart {
+  text-align: center;
+}
