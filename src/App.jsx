@@ -24,21 +24,25 @@ function App() {
   }, []);
 
   const handleTrue = () => {
-    setClicked(true);
-    setAfterClick((prevChoice) => ({
-      ...prevChoice,
-      screenHeight: '100vh',
-      screenScroll: 'hidden',
-    }));
+    if (clicked === false) {
+      setClicked(true);
+      setAfterClick((prevChoice) => ({
+        ...prevChoice,
+        screenHeight: '100vh',
+        screenScroll: 'hidden',
+      }));
+    }
   };
 
   const handleFalse = () => {
-    setClicked(false);
-    setAfterClick((prevChoice) => ({
-      ...prevChoice,
-      screenHeight: '100',
-      screenScroll: 'scroll',
-    }));
+    if (clicked === true) {
+      setClicked(false);
+      setAfterClick((prevChoice) => ({
+        ...prevChoice,
+        screenHeight: '100',
+        screenScroll: 'scroll',
+      }));
+    }
   };
 
   const handleCart = () => {
@@ -46,11 +50,8 @@ function App() {
   };
 
   const handleClicked = () => {
-    if (clicked === false) {
-      handleTrue();
-    } else {
-      handleFalse();
-    }
+    handleTrue();
+    handleFalse();
   };
 
   return (
