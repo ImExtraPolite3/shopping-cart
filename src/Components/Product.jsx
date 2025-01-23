@@ -5,7 +5,7 @@ export default function Product({ showProduct, addToCart }) {
       <h1>{showProduct.title}</h1>
       <div className="product-increase">
         <button>-</button>
-        <h2>1</h2>
+        <h3>1</h3>
         <button>+</button>
       </div>
       <button onClick={addToCart}>Add to Cart</button>
