@@ -119,6 +119,22 @@ a {
   font-size: 1rem;
 }
 
+.product-increase {
+  background-color: navy;
+  display: flex;
+  color: white;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-increase > button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+}
+
 .shopping-cart {
   width: 85%;
   margin: auto;
