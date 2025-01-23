@@ -31,10 +31,10 @@ function App() {
     <>
       <nav>
         <img onClick={handleClicked} src="/menu.svg" alt="" />
-        <Link to="/">
+        <Link to="/" onClick={() => setClicked(false)}>
           <h1>StoreName</h1>
         </Link>
-        <Link to="/shopping-cart">
+        <Link to="/shopping-cart" onClick={() => setClicked(false)}>
           <img src="/cart-outline.svg" alt="" />
         </Link>
       </nav>
