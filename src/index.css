@@ -36,11 +36,6 @@ a {
   text-decoration: none;
 }
 
-/* #container {
-  height: 100vh;
-  overflow-y: hidden;
-} */
-
 #container > div:last-child {
   margin: 20px 0;
 }
@@ -65,13 +60,22 @@ a {
   }
 }
 
-.menu > button {
+.menu > a > button {
+  width: 100%;
   border: none;
   border-bottom: 1px solid lightgray;
   padding: auto;
   background: none;
   padding: 15px;
   font-size: 1rem;
+}
+
+.menu > a:active {
+  background-color: navy;
+}
+
+.menu > a > button:active {
+  color: white;
 }
 
 .shop {

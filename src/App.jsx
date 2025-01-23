@@ -71,7 +71,7 @@ function App() {
           <img src="/cart-outline.svg" alt="" />
         </Link>
       </nav>
-      {clicked && <Menu />}
+      {clicked && <Menu closeMenu={handleFalse} />}
       <div>
         {name === 'product' ? (
           <Product showProduct={getProduct} addToCart={handleCart} />
