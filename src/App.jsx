@@ -11,6 +11,10 @@ function App() {
   const [getProduct, setGetProduct] = useState('');
   const [getCart, setCart] = useState([]);
   const [clicked, setClicked] = useState(false);
+  const [afterClick, setAfterClick] = useState({
+    screenHeight: 100,
+    screenScroll: scrollY,
+  });
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -19,22 +23,50 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleTrue = () => {
+    setClicked(true);
+    setAfterClick((prevChoice) => ({
+      ...prevChoice,
+      screenHeight: '100vh',
+      screenScroll: 'hidden',
+    }));
+  };
+
+  const handleFalse = () => {
+    setClicked(false);
+    setAfterClick((prevChoice) => ({
+      ...prevChoice,
+      screenHeight: '100',
+      screenScroll: 'scroll',
+    }));
+  };
+
   const handleCart = () => {
     setCart((prevItem) => [...prevItem, getProduct]);
   };
 
   const handleClicked = () => {
-    clicked === false ? setClicked(true) : setClicked(false);
+    if (clicked === false) {
+      handleTrue();
+    } else {
+      handleFalse();
+    }
   };
 
   return (
-    <>
+    <div
+      id="container"
+      style={{
+        height: afterClick.screenHeight,
+        overflowY: afterClick.screenScroll,
+      }}
+    >
       <nav>
         <img onClick={handleClicked} src="/menu.svg" alt="" />
-        <Link to="/" onClick={() => setClicked(false)}>
+        <Link to="/" onClick={handleFalse}>
           <h1>StoreName</h1>
         </Link>
-        <Link to="/shopping-cart" onClick={() => setClicked(false)}>
+        <Link to="/shopping-cart" onClick={handleFalse}>
           <img src="/cart-outline.svg" alt="" />
         </Link>
       </nav>
@@ -52,7 +84,7 @@ function App() {
           <Shop allItems={getItems} showProduct={setGetProduct} />
         )}
       </div>
-    </>
+    </div>
   );
 }
 
