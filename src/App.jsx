@@ -15,6 +15,7 @@ function App() {
     screenHeight: 100,
     screenScroll: scrollY,
   });
+  const [numOfItem, setNumOfItem] = useState(1);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -74,7 +75,13 @@ function App() {
       {clicked && <Menu closeMenu={handleFalse} />}
       <div>
         {name === 'product' ? (
-          <Product showProduct={getProduct[0]} addToCart={handleCart} />
+          <Product
+            showProduct={getProduct}
+            addToCart={handleCart}
+            decrease={() => setNumOfItem((prevNum) => prevNum - 1)}
+            increase={() => setNumOfItem((prevNum) => prevNum + 1)}
+            numOfItem={numOfItem}
+          />
         ) : name === 'shopping-cart' ? (
           getCart.length > 0 ? (
             <ShoppingCart cart={getCart} />
@@ -82,7 +89,11 @@ function App() {
             <div className="empty-cart">Cart is empty! Add items to cart !</div>
           )
         ) : (
-          <Shop allItems={getItems} showProduct={setGetProduct} />
+          <Shop
+            allItems={getItems}
+            showProduct={setGetProduct}
+            numOfItem={numOfItem}
+          />
         )}
       </div>
     </div>
