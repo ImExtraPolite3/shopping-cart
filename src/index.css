@@ -101,6 +101,15 @@ a {
   max-width: 250px;
 }
 
+.product > button {
+  border: none;
+  color: white;
+  background-color: navy;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+}
+
 .shopping-cart {
   width: 85%;
   margin: auto;
