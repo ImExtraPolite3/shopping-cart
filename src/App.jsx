@@ -24,21 +24,19 @@ function App() {
   };
 
   const handleClicked = () => {
-    if (clicked === false) {
-      setClicked(true);
-    } else {
-      setClicked(false);
-    }
+    clicked === false ? setClicked(true) : setClicked(false);
   };
 
   return (
     <>
       <nav>
-        <button onClick={handleClicked}>menu</button>
+        <img onClick={handleClicked} src="/menu.svg" alt="" />
         <Link to="/">
           <h1>StoreName</h1>
         </Link>
-        <Link to="/shopping-cart">Shopping cart</Link>
+        <Link to="/shopping-cart">
+          <img src="/cart-outline.svg" alt="" />
+        </Link>
       </nav>
       {clicked && <Menu />}
       <div>

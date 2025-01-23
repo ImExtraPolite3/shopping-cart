@@ -10,16 +10,17 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  padding: 10px 0;
+  padding: 10px 5px;
   background-color: navy;
   color: white;
   top: 0;
+  gap: 5px;
 }
 
-nav > button {
-  background: none;
-  border: none;
-  color: white;
+nav > img,
+nav > a > img {
+  width: 30px;
+  fill: white;
 }
 
 nav > a {
@@ -45,13 +46,27 @@ a {
   flex-direction: column;
   height: 100%;
   background-color: white;
-  width: 40%;
+  width: 100vw;
+  animation: openMenu 200ms;
+}
+
+@keyframes openMenu {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 .menu > button {
-  padding: auto;
   border: none;
-  background-color: navy;
+  border-bottom: 1px solid lightgray;
+  padding: auto;
+  background: none;
+  padding: 15px;
+  font-size: 1rem;
 }
 
 .shop {
