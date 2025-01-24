@@ -9,8 +9,8 @@ export default function Product({
 }) {
   return (
     <div className="product">
-      <img src={showProduct[0].image} alt={showProduct[0].title} />
-      <h1>{showProduct[0].title}</h1>
+      <img src={showProduct.image} alt={showProduct.title} />
+      <h1>{showProduct.title}</h1>
       <div className="product-increase">
         <button onClick={decrease}>-</button>
         <h3>{numOfItem}</h3>

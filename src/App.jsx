@@ -8,7 +8,7 @@ import Menu from './Components/Menu';
 function App() {
   let { name } = useParams();
   const [getItems, setGetItem] = useState([]);
-  const [getProduct, setGetProduct] = useState([]);
+  const [getProduct, setGetProduct] = useState('');
   const [getCart, setCart] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [afterClick, setAfterClick] = useState({
@@ -47,7 +47,7 @@ function App() {
   };
 
   const handleCart = () => {
-    setCart((prevItem) => [...prevItem, getProduct]);
+    setCart((prevItem) => [...prevItem, [getProduct, numOfItem]]);
   };
 
   const handleClicked = () => {
@@ -84,16 +84,12 @@ function App() {
           />
         ) : name === 'shopping-cart' ? (
           getCart.length > 0 ? (
-            <ShoppingCart cart={getCart} />
+            <ShoppingCart cart={getCart} numOfItem={numOfItem} />
           ) : (
             <div className="empty-cart">Cart is empty! Add items to cart !</div>
           )
         ) : (
-          <Shop
-            allItems={getItems}
-            showProduct={setGetProduct}
-            numOfItem={numOfItem}
-          />
+          <Shop allItems={getItems} showProduct={setGetProduct} />
         )}
       </div>
     </div>
