@@ -8,6 +8,7 @@ import Menu from './Components/Menu';
 function App() {
   let { name } = useParams();
   const [getItems, setGetItem] = useState([]);
+  const [filterItems, setFilterItem] = useState([]);
   const [getProduct, setGetProduct] = useState('');
   const [getCart, setCart] = useState([]);
   const [clicked, setClicked] = useState(false);
@@ -23,6 +24,10 @@ function App() {
       .then((json) => setGetItem(json))
       .catch((error) => console.log(error));
   }, []);
+
+  const handleFilter = (e) => {
+    setFilterItem(getItems.filter((items) => items.category === e.target.id));
+  };
 
   const handleTrue = () => {
     if (clicked === false) {
@@ -78,8 +83,16 @@ function App() {
           <img src="/cart-outline.svg" alt="" />
         </Link>
       </nav>
-      {clicked && <Menu closeMenu={handleFalse} />}
+      {clicked && (
+        <Menu
+          closeMenu={(e) => {
+            handleFalse();
+            handleFilter(e);
+          }}
+        />
+      )}
       <div>
+        {console.log(filterItems)}
         {name === 'product' ? (
           <Product
             showProduct={getProduct}
@@ -95,7 +108,7 @@ function App() {
             <div className="empty-cart">Cart is empty! Add items to cart !</div>
           )
         ) : (
-          <Shop allItems={getItems} showProduct={setGetProduct} />
+          <Shop allItems={filterItems} showProduct={setGetProduct} />
         )}
       </div>
     </div>
