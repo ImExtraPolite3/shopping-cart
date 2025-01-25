@@ -17,6 +17,7 @@ function App() {
     screenScroll: scrollY,
   });
   const [numOfItem, setNumOfItem] = useState(1);
+  const [selected, setSelected] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -26,6 +27,7 @@ function App() {
   }, []);
 
   const handleFilter = (e) => {
+    setSelected(true);
     setFilterItem(getItems.filter((items) => items.category === e.target.id));
   };
 
@@ -75,6 +77,7 @@ function App() {
           onClick={() => {
             handleFalse();
             setNumOfItem(1);
+            setSelected(false);
           }}
         >
           <h1>StoreName</h1>
@@ -92,7 +95,6 @@ function App() {
         />
       )}
       <div>
-        {console.log(filterItems)}
         {name === 'product' ? (
           <Product
             showProduct={getProduct}
@@ -108,7 +110,10 @@ function App() {
             <div className="empty-cart">Cart is empty! Add items to cart !</div>
           )
         ) : (
-          <Shop allItems={filterItems} showProduct={setGetProduct} />
+          <Shop
+            allItems={selected === false ? getItems : filterItems}
+            showProduct={setGetProduct}
+          />
         )}
       </div>
     </div>
