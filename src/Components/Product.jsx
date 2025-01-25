@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Link } from 'react-router';
 
 export default function Product({
   showProduct,
@@ -16,7 +16,9 @@ export default function Product({
         <h3>{numOfItem}</h3>
         <button onClick={increase}>+</button>
       </div>
-      <button onClick={addToCart}>Add to Cart</button>
+      <Link to="/shopping-cart" onClick={addToCart}>
+        Add to Cart
+      </Link>
     </div>
   );
 }
