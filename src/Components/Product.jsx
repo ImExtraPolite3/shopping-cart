@@ -11,6 +11,7 @@ export default function Product({
     <div className="product">
       <img src={showProduct.image} alt={showProduct.title} />
       <h1>{showProduct.title}</h1>
+      <p>${showProduct.price}</p>
       <div className="product-increase">
         <button onClick={decrease}>-</button>
         <h3>{numOfItem}</h3>
