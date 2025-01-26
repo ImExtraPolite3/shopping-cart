@@ -1,4 +1,4 @@
-function ShoppingCart({ cart }) {
+function ShoppingCart({ cart, removeCart }) {
   return (
     <div className="shopping-cart">
       {cart.map((item, index) => {
@@ -7,7 +7,7 @@ function ShoppingCart({ cart }) {
             <img src={item[0].image} alt={item[0].title} />
             <h3>{item[0].title}</h3>
             <p>amount: {item[1]}</p>
-            <button>delete</button>
+            <button onClick={() => removeCart(item)}>delete</button>
           </div>
         );
       })}
