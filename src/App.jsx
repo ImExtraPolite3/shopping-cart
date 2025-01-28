@@ -19,6 +19,7 @@ function App() {
   const [numOfItem, setNumOfItem] = useState(1);
   const [selected, setSelected] = useState(false);
   const [removeCart, setRemoveCart] = useState([]);
+  const [selectDelete, setSelectDelete] = useState(false);
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -96,7 +97,7 @@ function App() {
         />
       )}
       <div>
-        {console.log(removeCart)}
+        {/* {console.log(removeCart)} */}
         {name === 'product' ? (
           <Product
             showProduct={getProduct}
@@ -108,9 +109,20 @@ function App() {
         ) : name === 'shopping-cart' ? (
           getCart.length > 0 ? (
             <ShoppingCart
-              cart={getCart}
+              cart={selectDelete === false ? getCart : removeCart}
+              // cart={getCart}
               numOfItem={numOfItem}
-              removeCart={setRemoveCart}
+              removeCart={(e) => {
+                setSelectDelete(true);
+                getCart.map((item, index) => {
+                  if (item[0].id === e[0].id) {
+                    // console.log(item[0].id);
+                    // console.log(e[0].id);
+                    console.log(index);
+                    setRemoveCart(getCart.splice(1, index));
+                  }
+                });
+              }}
             />
           ) : (
             <div className="empty-cart">Cart is empty! Add items to cart !</div>
