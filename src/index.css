@@ -136,19 +136,34 @@ a {
 }
 
 .shopping-cart {
-  width: 85%;
+  width: 95%;
   margin: auto;
 }
 
 .shopping-cart > div {
   display: flex;
-  align-items: center;
 }
 
-.shopping-cart > div > img {
+.cart-image {
   width: 20%;
+
+  img {
+    width: 100%;
+  }
 }
 
-.empty-cart {
+.shopping-cart > div > img:last-child {
+  width: 25px;
+}
+
+.shopping-cart > div > h3 {
+  font-size: 0.8rem;
+}
+
+.shopping-cart > div > p {
+  justify-self: center;
+  font-size: 0.8rem;
+}
+*/ .empty-cart {
   text-align: center;
 }
