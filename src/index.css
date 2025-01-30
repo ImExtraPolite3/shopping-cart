@@ -146,33 +146,43 @@ a {
 }
 
 .shopping-cart {
-  width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
   margin: auto;
 }
 
 .shopping-cart > div {
   display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .cart-image {
-  width: 20%;
-
-  img {
-    width: 100%;
-  }
+  width: 100px;
 }
 
-.shopping-cart > div > img:last-child {
-  width: 25px;
+.cart-image > img {
+  width: 100%;
 }
 
-.shopping-cart > div > h3 {
-  font-size: 0.8rem;
+.cart-info {
+  display: flex;
 }
 
-.shopping-cart > div > p {
-  justify-self: center;
-  font-size: 0.8rem;
+.cart-info > div {
+  width: 65vw;
+}
+
+.cart-info > div > h4 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cart-info > img {
+  width: 30px;
 }
 
 .empty-cart {
