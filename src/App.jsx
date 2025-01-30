@@ -84,6 +84,7 @@ function App() {
         </Link>
         <Link to="/shopping-cart" onClick={handleFalse}>
           <img src="/cart-outline.svg" alt="" />
+          <p className="in-cart">{getCart.length}</p>
         </Link>
       </nav>
       {clicked && (
