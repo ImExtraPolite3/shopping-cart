@@ -99,7 +99,11 @@ function App() {
           <Product
             showProduct={getProduct}
             addToCart={handleCart}
-            decrease={() => setNumOfItem((prevNum) => prevNum - 1)}
+            decrease={() =>
+              setNumOfItem((prevNum) =>
+                prevNum > 1 ? prevNum - 1 : (prevNum = 1)
+              )
+            }
             increase={() => setNumOfItem((prevNum) => prevNum + 1)}
             numOfItem={numOfItem}
           />
