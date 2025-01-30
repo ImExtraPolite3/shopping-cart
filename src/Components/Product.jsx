@@ -17,7 +17,7 @@ export default function Product({
         <h3>{numOfItem}</h3>
         <button onClick={increase}>+</button>
       </div>
-      <Link to="/shopping-cart" onClick={addToCart}>
+      <Link to="/" onClick={addToCart}>
         Add to Cart
       </Link>
     </div>
