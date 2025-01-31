@@ -1,5 +1,8 @@
 function ShoppingCart({ cart, removeCart }) {
-  let itemPrice = cart.reduce((acc, current) => acc + current[0].price, 0);
+  let itemPrice = cart.reduce(
+    (acc, current) => acc + current[0].price * current[1],
+    0
+  );
 
   return (
     <>
@@ -26,6 +29,8 @@ function ShoppingCart({ cart, removeCart }) {
         })}
         <div className="checkout">
           <h3>${itemPrice}</h3>
+          {console.log(cart)}
+
           <button>proceed to checkout</button>
         </div>
       </div>
