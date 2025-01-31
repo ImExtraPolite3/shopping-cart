@@ -188,3 +188,22 @@ a {
 .empty-cart {
   text-align: center;
 }
+
+.checkout {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  padding: 15px 0;
+  background-color: white;
+}
+
+.checkout > h3 {
+  margin-left: 15px;
+}
+
+.checkout > button {
+  /* border: none; */
+  margin-right: 15px;
+}
