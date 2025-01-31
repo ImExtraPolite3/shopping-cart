@@ -29,8 +29,6 @@ function ShoppingCart({ cart, removeCart }) {
         })}
         <div className="checkout">
           <h3>${itemPrice}</h3>
-          {console.log(cart)}
-
           <button>proceed to checkout</button>
         </div>
       </div>
