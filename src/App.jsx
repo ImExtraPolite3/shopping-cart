@@ -13,7 +13,7 @@ function App() {
   const [getCart, setCart] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [afterClick, setAfterClick] = useState({
-    screenHeight: 100,
+    screenHeight: '100%',
     screenScroll: scrollY,
   });
   const [numOfItem, setNumOfItem] = useState(1);
