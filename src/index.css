@@ -151,6 +151,7 @@ a {
   gap: 10px;
   width: 90%;
   margin: auto;
+  margin-bottom: 60px;
 }
 
 .shopping-cart > div {
@@ -204,6 +205,5 @@ a {
 }
 
 .checkout > button {
-  /* border: none; */
   margin-right: 15px;
 }
