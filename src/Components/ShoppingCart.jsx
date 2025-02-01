@@ -1,8 +1,5 @@
 function ShoppingCart({ cart, removeCart }) {
-  let itemPrice = cart.reduce(
-    (acc, current) => acc + current[0].price * current[1],
-    0
-  );
+  let itemPrice = cart.reduce((acc, current) => acc + current[2], 0);
 
   return (
     <>
@@ -17,6 +14,7 @@ function ShoppingCart({ cart, removeCart }) {
                 <div>
                   <h4>{item[0].title}</h4>
                   <p> {`amount: ${item[1]}`}</p>
+                  <p>{`price: $${item[2]}`}</p>
                 </div>
                 <img
                   src="/delete.svg"

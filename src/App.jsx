@@ -54,7 +54,10 @@ function App() {
   };
 
   const handleCart = () => {
-    setCart((prevItem) => [...prevItem, [getProduct, numOfItem]]);
+    setCart((prevItem) => [
+      ...prevItem,
+      [getProduct, numOfItem, getProduct.price * numOfItem],
+    ]);
   };
 
   const handleClicked = () => {
