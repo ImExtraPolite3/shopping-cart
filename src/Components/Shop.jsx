@@ -8,7 +8,7 @@ function Shop({ allItems, showProduct }) {
           <Link to="/product" key={index} onClick={() => showProduct(item)}>
             <img src={item.image} alt={item.title} />
             <h4>{item.title}</h4>
-            <p>$ {item.price}</p>
+            <p>{`$${item.price}`}</p>
           </Link>
         );
       })}
