@@ -27,10 +27,10 @@ function ShoppingCart({ cart, removeCart }) {
             </div>
           );
         })}
-        <div className="checkout">
-          <h3>${itemPrice}</h3>
-          <button>proceed to checkout</button>
-        </div>
+      </div>
+      <div className="checkout">
+        <h3>${itemPrice}</h3>
+        <button>proceed to checkout</button>
       </div>
     </>
   );
