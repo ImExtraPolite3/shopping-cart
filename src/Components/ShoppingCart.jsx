@@ -1,9 +1,13 @@
 function ShoppingCart({ cart, removeCart }) {
   let itemPrice = cart.reduce((acc, current) => acc + current[2], 0);
+  // cart[cart.length - 1];
+  let duplicate = cart.filter((item, index) => cart.indexOf(item) !== index);
 
   return (
     <>
       <div className="shopping-cart">
+        {console.log(duplicate)}
+
         {cart.map((item, index) => {
           return (
             <div key={index}>
