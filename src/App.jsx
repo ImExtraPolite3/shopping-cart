@@ -54,10 +54,13 @@ function App() {
   };
 
   const handleCart = () => {
-    setCart((prevItem) => [
-      ...prevItem,
-      [getProduct, numOfItem, getProduct.price * numOfItem],
-    ]);
+    const cartItem = [getProduct, numOfItem, getProduct.price * numOfItem];
+
+    setCart((prevItem) => {
+      const newArray = prevItem.filter((item) => item[0].id !== getProduct.id);
+
+      return [...newArray, cartItem];
+    });
   };
 
   const handleClicked = () => {
