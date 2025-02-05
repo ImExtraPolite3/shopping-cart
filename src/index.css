@@ -194,6 +194,7 @@ a {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: fixed;
   bottom: 0;
   padding: 15px 0;
@@ -206,4 +207,10 @@ a {
 
 .checkout > button {
   margin-right: 15px;
+  border: none;
+  background-color: navy;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 10px;
+  color: white;
 }
