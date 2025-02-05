@@ -214,3 +214,13 @@ a {
   border-radius: 10px;
   color: white;
 }
+
+@media (min-width: 500px) {
+  .shop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .shop > a > img {
+    width: 25vw;
+  }
+}
