@@ -218,9 +218,20 @@ a {
 @media (min-width: 500px) {
   .shop {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   .shop > a > img {
     width: 25vw;
+  }
+}
+
+@media (min-width: 600px) {
+  .shop {
+    width: 80%;
+  }
+
+  .shop > a > img {
+    width: 20vw;
   }
 }
