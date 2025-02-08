@@ -240,4 +240,22 @@ a {
   .shop {
     gap: 20px;
   }
+
+  .shopping-cart > div {
+    width: fit-content;
+    margin: auto;
+  }
+
+  .cart-image {
+    width: fit-content;
+  }
+
+  .cart-image > img {
+    width: 15vw;
+  }
+
+  .cart-info {
+    width: 70%;
+    margin: auto;
+  }
 }
