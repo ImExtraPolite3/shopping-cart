@@ -98,6 +98,10 @@ a {
   margin: auto;
 }
 
+.shop > a {
+  width: 45vw;
+}
+
 .shop > a > img {
   width: 40vw;
 }
@@ -176,7 +180,8 @@ a {
   width: 65vw;
 }
 
-.cart-info > div > h4 {
+.cart-info > div > h4,
+.shop > a > h4 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -220,12 +225,16 @@ a {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .shop > a {
+    width: 30vw;
+  }
+
   .shop > a > img {
     width: 25vw;
   }
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   .shop {
     gap: 20px;
     width: 80%;
@@ -234,11 +243,16 @@ a {
   .shop > a > img {
     width: 20vw;
   }
-}
+} */
 
 @media (min-width: 700px) {
   .shop {
     gap: 20px;
+    width: 90%;
+  }
+
+  .shop > a {
+    width: 28vw;
   }
 
   .shopping-cart > div {
@@ -257,5 +271,35 @@ a {
   .cart-info {
     width: 70%;
     margin: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .shop {
+    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .shop > a {
+    width: 18vw;
+  }
+
+  .shop > a > img {
+    width: 15vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .shop {
+    width: 70%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .shop > a {
+    width: 15vw;
+  }
+
+  .shop > a > img {
+    width: 12vw;
   }
 }
