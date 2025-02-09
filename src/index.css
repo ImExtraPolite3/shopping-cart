@@ -18,6 +18,14 @@ nav {
 }
 
 nav > img,
+.menu > a,
+.product-increase > button,
+.cart-info > img,
+.checkout > button {
+  cursor: pointer;
+}
+
+nav > img,
 nav > a > img {
   width: 30px;
   fill: white;
@@ -234,17 +242,6 @@ a {
   }
 }
 
-/* @media (min-width: 600px) {
-  .shop {
-    gap: 20px;
-    width: 80%;
-  }
-
-  .shop > a > img {
-    width: 20vw;
-  }
-} */
-
 @media (min-width: 700px) {
   .shop {
     gap: 20px;
@@ -287,6 +284,22 @@ a {
   .shop > a > img {
     width: 15vw;
   }
+
+  .shopping-cart {
+    width: 60%;
+  }
+
+  .cart-image > img {
+    width: 10vw;
+  }
+
+  .cart-info {
+    width: 45vw;
+  }
+
+  .cart-info > div > h4 {
+    width: 40vw;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -301,5 +314,21 @@ a {
 
   .shop > a > img {
     width: 12vw;
+  }
+
+  .shopping-cart {
+    width: 60%;
+  }
+
+  .cart-image > img {
+    width: 8vw;
+  }
+
+  .cart-info {
+    width: 35vw;
+  }
+
+  .cart-info > div > h4 {
+    width: 30vw;
   }
 }
