@@ -305,7 +305,6 @@ a {
 @media (min-width: 1440px) {
   .shop {
     width: 70%;
-    grid-template-columns: repeat(4, 1fr);
   }
 
   .shop > a {
@@ -313,7 +312,7 @@ a {
   }
 
   .shop > a > img {
-    width: 12vw;
+    width: 13vw;
   }
 
   .shopping-cart {
