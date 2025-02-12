@@ -269,6 +269,10 @@ a {
     width: 70%;
     margin: auto;
   }
+
+  .product > a {
+    max-width: 500px;
+  }
 }
 
 @media (min-width: 1000px) {
